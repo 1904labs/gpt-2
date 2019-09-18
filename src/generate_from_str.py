@@ -100,19 +100,16 @@ class GPT:
 
 
     def generate_from_str(self, input_str: str) -> str:
-        output_str = ''
+        """Returns a list of generated text with length equal to nsamples * batch-size"""
+        results = []
         context_tokens = self.enc.encode(input_str)
-        generated = 0
         for _ in range(self.nsamples // self.batch_size):
             out = self.sess.run(self.output, feed_dict={
                 self.context: [context_tokens for _ in range(self.batch_size)]
             })[:, len(context_tokens):]
             for i in range(self.batch_size):
-                generated += 1
                 text = self.enc.decode(out[i])
-                output_str += "=" * 40 + " SAMPLE " + str(generated) + " " + "=" * 40
-                output_str += text
-        output_str += ("=" * 80)
-        return output_str
+                results.append(text)
+        return results
 
     
