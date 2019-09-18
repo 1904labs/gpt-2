@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import fire
+
 import json
 import os
 import numpy as np
@@ -19,28 +19,28 @@ class GPT:
                     length=None,
                     temperature=1,
                     top_k=0):
-    self.batch_size = batch_size
-    self.nsamples = nsamples
-    self.build_model(model_name=model_name,
-                                    seed=seed,
-                                    nsamples=nsamples,
-                                    batch_size=batch_size,
-                                    length=length,
-                                    temperature=temperature,
-                                    top_k=top_k)
+        self.batch_size = batch_size
+        self.nsamples = nsamples
+        self.build_model(model_name=model_name,
+                            seed=seed,
+                            nsamples=nsamples,
+                            batch_size=batch_size,
+                            length=length,
+                            temperature=temperature,
+                            top_k=top_k)
 
                                     
-    def build_model(
-        model_name='774M',
-        seed=None,
-        nsamples=1,
-        batch_size=1,
-        length=None,
-        temperature=1,
-        top_k=0,
-        top_p=1,
-        models_dir='models',
-    ):
+    def build_model(self,
+                    model_name='774M',
+                    seed=None,
+                    nsamples=1,
+                    batch_size=1,
+                    length=None,
+                    temperature=1,
+                    top_k=0,
+                    top_p=1,
+                    models_dir='models',
+                ):
         """
         Interactively run the model
         :model_name=774M : String, which model to use
@@ -111,7 +111,8 @@ class GPT:
                 generated += 1
                 text = self.enc.decode(out[i])
                 output_str += "=" * 40 + " SAMPLE " + str(generated) + " " + "=" * 40
-                output_str = text
-        print("=" * 80)
+                output_str += text
+        output_str += ("=" * 80)
+        return output_str
 
     
