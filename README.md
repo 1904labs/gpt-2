@@ -1,7 +1,9 @@
-1904labs contributed a source module that provides an object oriented approach to generating text from GPT-2 instead of the command line interface provided by OpenAI. In particular, it allows a user to try various input prompts without having to reload the model after each generation.
+[1904labs](https://1904labs.com/) contributed a source module that provides an object oriented approach to generating text from GPT-2 instead of the command line interface provided by OpenAI. In particular, it allows a user to try various input prompts without having to reload the model after each generation. It also facilitates use of the model within a Jupyter notebook.
 
 A Jupyter notebook has been provided as an example.
 
+You can run the notebook in Google Colab with a GPU for free [here](https://colab.research.google.com/github/1904labs/gpt-2/blob/master/Generate%20with%20GPT-2%20from%20string.ipynb#scrollTo=CtpzoHbzRIOq)
+   
 
 ------------------------------------------------------------------------------------------------
 
