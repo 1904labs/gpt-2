@@ -1,3 +1,10 @@
+1904labs contributed a src module that provide an object oriented approach to generating text from GPT-2 instead of the command line interface provided by OpenAI. In particular, it allows a user to try various input prompts without having to reload the model.
+
+A Jupyter notebook has been provided as an example.
+
+
+------------------------------------------------------------------------------------------------
+
 **Status:** Archive (code is provided as-is, no updates expected)
 
 # gpt-2
